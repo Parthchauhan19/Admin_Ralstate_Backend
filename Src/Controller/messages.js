@@ -1,6 +1,5 @@
 import Messages from "../Model/messages.js";
 
-// Create a new message
 export const createMessages = async (req, res) => {
   try {
     const data = req.body;
@@ -25,7 +24,6 @@ export const createMessages = async (req, res) => {
   }
 };
 
-// Get all messages
 export const getAllMessages = async (req, res) => {
   try {
     const messages = await Messages.find();
@@ -39,7 +37,6 @@ export const getAllMessages = async (req, res) => {
   }
 };
 
-// Get messages by employee (Title or UserGroup match)
 export const getMessagesByEmployee = async (req, res) => {
   try {
     const { employe } = req.params;
@@ -68,7 +65,6 @@ export const getMessagesByEmployee = async (req, res) => {
   }
 };
 
-// Update message by Title
 export const updateMessages = async (req, res) => {
   try {
     const { employe } = req.params;
@@ -101,7 +97,6 @@ export const updateMessages = async (req, res) => {
   }
 };
 
-// Delete message by Title
 export const deleteMessages = async (req, res) => {
   try {
     const { employe } = req.params;

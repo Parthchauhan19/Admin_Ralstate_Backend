@@ -11,6 +11,7 @@ import { PieData_Routes } from "./Src/Routes/piedata.js";
 import { TeamMember_Routes } from "./Src/Routes/teammember.js";
 import { MessagesRoutes } from "./Src/Routes/messages.js";
 import { AllUserRoutes } from "./Src/Routes/alluser.js";
+import { TransactionsRoutes } from "./Src/Routes/transactions.js";
 
 dotenv.config();
 
@@ -27,7 +28,8 @@ app.use("/analytics", Analytics_Routes);
 app.use("/piedata", PieData_Routes);
 app.use("/teammember", TeamMember_Routes);
 app.use("/messages", MessagesRoutes);
-app.use("/alluser", AllUserRoutes); // Add this line to use the alluserRoutes);
+app.use("/alluser", AllUserRoutes);
+app.use("/transactions", TransactionsRoutes);
 
 // DB + Server
 const PORT = process.env.PORT || 8000;

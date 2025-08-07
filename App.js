@@ -12,6 +12,9 @@ import { TeamMember_Routes } from "./Src/Routes/teammember.js";
 import { MessagesRoutes } from "./Src/Routes/messages.js";
 import { AllUserRoutes } from "./Src/Routes/alluser.js";
 import { TransactionsRoutes } from "./Src/Routes/transactions.js";
+import  InquiryRoutes  from "./Src/Routes/inquiry.js";
+import  servicerouter from "./Src/Routes/service.js";
+
 
 dotenv.config();
 
@@ -30,6 +33,10 @@ app.use("/teammember", TeamMember_Routes);
 app.use("/messages", MessagesRoutes);
 app.use("/alluser", AllUserRoutes);
 app.use("/transactions", TransactionsRoutes);
+app.use("/inquiry", InquiryRoutes);
+app.use("/service", servicerouter);
+
+
 
 // DB + Server
 const PORT = process.env.PORT || 8000;

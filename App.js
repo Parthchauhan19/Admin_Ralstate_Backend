@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 
-// Import all routes correctly
 import { User_Routes } from "./Src/Routes/user.js";
 import { Property_Routes } from "./Src/Routes/property.js";
 import { Analytics_Routes } from "./Src/Routes/analytics.js";
@@ -12,15 +11,15 @@ import { TeamMember_Routes } from "./Src/Routes/teammember.js";
 import { MessagesRoutes } from "./Src/Routes/messages.js";
 import { AllUserRoutes } from "./Src/Routes/alluser.js";
 import { TransactionsRoutes } from "./Src/Routes/transactions.js";
-import  InquiryRoutes  from "./Src/Routes/inquiry.js";
-import  servicerouter from "./Src/Routes/service.js";
-
+import InquiryRoutes from "./Src/Routes/inquiry.js";
+import servicerouter from "./Src/Routes/service.js";
+import RentalRoutes from "./Src/Routes/rental.js";
+import NewsRoutes from "./Src/Routes/news.js";
 
 dotenv.config();
 
 const app = express();
 
-// Middlewares
 app.use(express.json());
 app.use(cors());
 
@@ -35,10 +34,9 @@ app.use("/alluser", AllUserRoutes);
 app.use("/transactions", TransactionsRoutes);
 app.use("/inquiry", InquiryRoutes);
 app.use("/service", servicerouter);
+app.use("/rental", RentalRoutes);
+app.use("/news", NewsRoutes);
 
-
-
-// DB + Server
 const PORT = process.env.PORT || 8000;
 const MONGO_URL =
   process.env.MONGO_URL || "mongodb://localhost:27017/ochi-admin-backend";

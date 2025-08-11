@@ -1,11 +1,11 @@
 import TeamMember from "../Model/teammember.js";
 
-// Create a new team member (id must be sent by client)
+
 export const createTeamMember = async (req, res) => {
   try {
     const { id, Name, Number, Address } = req.body;
 
-    // Check if Name already exists
+    
     const existing = await TeamMember.findOne({ Name });
     if (existing) {
       return res
@@ -26,7 +26,7 @@ export const createTeamMember = async (req, res) => {
   }
 };
 
-// Get all team members
+
 export const getAllTeamMember = async (req, res) => {
   try {
     const members = await TeamMember.find().sort({ createdAt: -1 });
@@ -38,7 +38,7 @@ export const getAllTeamMember = async (req, res) => {
   }
 };
 
-// Get team member by name
+
 export const getTeamMemberByEmployee = async (req, res) => {
   try {
     const { employe } = req.params;
@@ -56,7 +56,7 @@ export const getTeamMemberByEmployee = async (req, res) => {
   }
 };
 
-// Update team member by name
+
 export const updateTeamMember = async (req, res) => {
   try {
     const { employe } = req.params;
@@ -82,7 +82,7 @@ export const updateTeamMember = async (req, res) => {
   }
 };
 
-// Delete team member by name
+
 export const deleteTeamMember = async (req, res) => {
   try {
     const { employe } = req.params;

@@ -8,7 +8,7 @@ export const createService = async (req, res) => {
       return res.status(400).json({ message: "Phone number is required" });
     }
 
-    // Check if phone number already exists
+    
     const existing = await Service.findOne({ phone });
     if (existing) {
       return res

@@ -38,12 +38,10 @@ app.use("/rental", RentalRoutes);
 app.use("/news", NewsRoutes);
 
 const PORT = process.env.PORT || 8000;
-const MONGO_URL =
-  process.env.MONGO_URL || "mongodb://localhost:27017/ochi-admin-backend";
 
 app.listen(PORT, async () => {
   try {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URI);
     console.log(`✅ Server running at http://localhost:${PORT}`);
   } catch (err) {
     console.error("❌ Failed to connect to MongoDB:", err.message);
